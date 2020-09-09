@@ -1953,6 +1953,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
  // register globally
 
 Vue.component('multiselect', vue_multiselect__WEBPACK_IMPORTED_MODULE_0___default.a);
@@ -1989,6 +1996,13 @@ Vue.component('multiselect', vue_multiselect__WEBPACK_IMPORTED_MODULE_0___defaul
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js");
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_multiselect__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38535,23 +38549,23 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("label", { staticClass: "typo__label" }, [
-        _vm._v("Simple select / dropdown")
-      ]),
-      _vm._v(" "),
       _c("multiselect", {
         attrs: {
-          id: "users",
-          name: "users",
-          options: _vm.options,
           multiple: true,
           "close-on-select": false,
           "clear-on-select": false,
           "preserve-search": true,
           placeholder: "Pick some",
-          label: "label",
-          "track-by": "label",
-          "preselect-first": true
+          "preselect-first": true,
+          name: "userid",
+          options: _vm.options.map(function(option) {
+            return option.value
+          }),
+          "custom-label": function(opt) {
+            return _vm.options.find(function(x) {
+              return x.value == opt
+            }).label
+          }
         },
         scopedSlots: _vm._u([
           {
@@ -38581,7 +38595,28 @@ var render = function() {
       _vm._v(" "),
       _c("pre", { staticClass: "language-json" }, [
         _c("code", [_vm._v(_vm._s(_vm.value))])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.value,
+            expression: "value"
+          }
+        ],
+        attrs: { type: "hidden", name: "users" },
+        domProps: { value: _vm.value },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.value = $event.target.value
+          }
+        }
+      })
     ],
     1
   )
@@ -38611,23 +38646,24 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("label", { staticClass: "typo__label" }, [
-        _vm._v("Simple select / dropdown")
-      ]),
-      _vm._v(" "),
       _c("multiselect", {
         attrs: {
-          id: "todo",
-          name: "todo",
-          options: _vm.options,
           multiple: false,
           "close-on-select": false,
           "clear-on-select": false,
           "preserve-search": true,
           placeholder: "Pick some",
           label: "label",
-          "track-by": "label",
-          "preselect-first": true
+          "preselect-first": true,
+          name: "todoid",
+          options: _vm.options.map(function(option) {
+            return option.value
+          }),
+          "custom-label": function(opt) {
+            return _vm.options.find(function(x) {
+              return x.value == opt
+            }).label
+          }
         },
         scopedSlots: _vm._u([
           {
@@ -38657,7 +38693,28 @@ var render = function() {
       _vm._v(" "),
       _c("pre", { staticClass: "language-json" }, [
         _c("code", [_vm._v(_vm._s(_vm.value))])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.value,
+            expression: "value"
+          }
+        ],
+        attrs: { type: "hidden", name: "todo" },
+        domProps: { value: _vm.value },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.value = $event.target.value
+          }
+        }
+      })
     ],
     1
   )

@@ -96,14 +96,11 @@ class TodoController extends Controller
     }
 
     public function assign(Request $request){
-        $todo = Todo::find($request->todo['value']);
+        $todo = Todo::find($request->todo);
 
-        $idUsers = array();
-        foreach($requst->users as $user){
-            array_push($idUsers, $user['value']);
-        }
-
-        $todo->users()->attach($idUsers);
+        $user_string = $request->users;
+        $users = preg_split ("/\,/", $user_string);
+        $todo->users()->attach($users);
 
         return redirect('/todos');
     }

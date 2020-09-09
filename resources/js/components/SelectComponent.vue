@@ -1,12 +1,18 @@
 <template>
 <div>
-  <label class="typo__label">Simple select / dropdown</label>
-  <multiselect  v-model="value" :options="options" :multiple="false" :close-on-select="false" :clear-on-select="false" :preserve-search="true" placeholder="Pick some" label="label" track-by="label" :preselect-first="true">
+  <!--label class="typo__label">Simple select / dropdown</label-->
+  <multiselect v-model="value" :multiple="false" 
+  :close-on-select="false" :clear-on-select="false" :preserve-search="true" 
+  placeholder="Pick some" label="label" :preselect-first="true"
+  name="todoid"
+  :options="options.map(option => option.value)" 
+  :custom-label="opt => options.find(x => x.value == opt).label"
+  >
     <template slot="selection" slot-scope="{ values, search, isOpen }"><span class="multiselect__single" v-if="values.length &amp;&amp; !isOpen">{{ values.length }} options selected</span></template>
   </multiselect>
   <pre class="language-json"><code>{{ value  }}</code></pre>
-  <input hidden id="todo" name="todo" value="{{value}}">
-</div>
+  <input type="hidden" name="todo" v-model="value">  
+  </div>
 </template>
 
 <script>
