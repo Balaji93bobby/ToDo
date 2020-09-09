@@ -21,6 +21,9 @@ Route::get('/welcome', function () {
 Route::auth();
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/tasks', 'TaskController@index');
@@ -30,6 +33,9 @@ Route::delete('/task/{task}', 'TaskController@destroy');
 Route::get('/todos', 'TodoController@index');
 Route::post('/todo', 'TodoController@store');
 Route::delete('/todo/{todo}', 'TodoController@destroy');
+
+Route::get('/myTodos', 'TodoController@todos');
+
 
 Route::post('/assignTodo', 'TodoController@assign');
 

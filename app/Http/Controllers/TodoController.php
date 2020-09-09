@@ -104,4 +104,14 @@ class TodoController extends Controller
 
         return redirect('/todos');
     }
+
+    public function todos(Request $request){
+        $todos = $request->user()->todos;
+
+        return view('todos.index', [
+            'todos' => $todos
+        ]);
+
+    }
+
 }

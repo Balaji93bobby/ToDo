@@ -19,6 +19,7 @@
                     <div>
                         <ul>
                             <li><a href="/assign"> Assign Todos </a></li>
+                            <li><a href="/myTodos"> My Todos </a></li>
                             <li><a href="/submitTodo"> Submit Todo </a></li>
                             <li><a href="/todos"> List Todos </a></li>
                             <li><a href="/submit"> Submit Task </a></li>
