@@ -15,6 +15,18 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <div>
+                        <ul>
+                            <li><a href="/assign"> Assign Todos </a></li>
+                            <li><a href="/submitTodo"> Submit Todo </a></li>
+                            <li><a href="/todos"> List Todos </a></li>
+                            <li><a href="/submit"> Submit Task </a></li>
+                            <li><a href="/tasks"> List Tasks </a></li>
+                            <li><a href="/travel"> Travel List </a></li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
         </div>
