@@ -22,9 +22,8 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('drop-down', require('./components/MultiSelectComponent.vue').default);
 Vue.component('drop-down-simple', require('./components/SelectComponent.vue').default);
-
-
-Vue.component('user-view', require('./components/UserComponent.vue').default);
+Vue.component('animation', require('./components/anin.vue').default);
+Vue.component('lot', require('./components/lottie.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

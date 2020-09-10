@@ -17,6 +17,10 @@ Route::get('/welcome', function () {
   return view('welcome', ['visited' => $visited, 'togo' => $togo ] );
 });
 
+Route::get('/animation', function () {
+  return view('animation' );
+});
+
 // Authentication Routes...
 Route::auth();
 Auth::routes();
@@ -78,3 +82,9 @@ Route::get('/assign', function () {
   );
   return view('assign',['users' => $list, 'todos' => $list_todos]);
 });
+
+Route::view('/demo', 'demo')->name('demo');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

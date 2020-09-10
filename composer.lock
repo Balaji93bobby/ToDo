@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3f3ca4796cef81c9fc48e3c7dadaa52",
+    "content-hash": "f42896d4703d888a30b58e64807eebb6",
     "packages": [
         {
             "name": "brick/math",
@@ -4008,6 +4008,59 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2020-07-13T06:12:54+00:00"
+        },
+        {
+            "name": "torrix/laravel-ui-uikit",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/torrix/laravel-ui-uikit.git",
+                "reference": "a141eade3a13c247a6b2794473efaa94a9e5e5ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/torrix/laravel-ui-uikit/zipball/a141eade3a13c247a6b2794473efaa94a9e5e5ee",
+                "reference": "a141eade3a13c247a6b2794473efaa94a9e5e5ee",
+                "shasum": ""
+            },
+            "require-dev": {
+                "laravel/ui": "^1.0",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Torrix\\Providers\\UikitServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Torrix\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Matt Fletcher",
+                    "email": "matt@torrix.uk"
+                }
+            ],
+            "description": "Laravel UI preset for UIkit.",
+            "keywords": [
+                "laravel",
+                "ui",
+                "uikit"
+            ],
+            "time": "2020-02-01T12:35:17+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
